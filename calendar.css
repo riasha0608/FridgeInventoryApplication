@@ -1,0 +1,221 @@
+ul {list-style-type: none;}
+body {font-family: Roboto, sans-serif;}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.month {
+  padding: 100px 25px;
+  width: 96.5%;
+  background-color: white;
+  text-align: center;
+  color: black;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: black;
+  font-size: 50px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #f3bf8d;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #445766;
+  text-align: center;
+}
+
+.days {
+  padding: 50px 0;
+  background: #fad1a5;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 65px;
+  font-size:32px;
+  color: #33414e;
+}
+
+.days li .active {
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+  background-color: white;
+  
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #ef5b5b;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -120px;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ef5b5b transparent transparent transparent;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+.popup2 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+}
+
+.popup2 .popuptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -120px;
+}
+
+.popup2 .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.popup2 .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+
+
+.overlay { 
+  height: 100%;
+  width: 0;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  background-color: rgb(243,191,141); 
+  background-color: rgba(243,191,141, 0.9); 
+  overflow-x: hidden; 
+  transition: 0.5s; 
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%; 
+  width: 100%;
+  text-align: center; 
+  margin-top: 30px; 
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block; 
+  transition: 0.3s; 
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}

@@ -1,0 +1,94 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.header{
+  margin: 0;
+  text-align: center;
+}
+
+.navbar a{
+  text-decoration: underline;
+  color: black;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.left-header{
+  position: absolute;  
+  text-align: center;
+  color: black;
+}
+
+@font-face {
+   font-family: myFont;
+   src: url(Kollektif.ttf);
+}
+
+.left-header h1{
+  position: absolute;
+  font-family: myFont, sans-serif;
+  left: 180px;
+  top: 250px;
+  font-size: 70px;
+  font-weight: 500;
+  
+}
+
+.left-header h3{
+  font-family: Roboto, sans-serif;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 100;
+  left: 250px;
+  top: 370px;
+}
+
+.row2{
+  text-align: center;
+  margin-left: 100px;
+}
+
+.row2 h1{
+  position: absolute;
+  font-family: Roboto, sans-serif;
+  left: 880px;
+  top: 950px;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.row2 h3{
+  font-family: Roboto, sans-serif;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 100;
+  left: 750px;
+  top: 1100px;
+  right: 120px;
+}
+
+.footer{
+  width: 100%
+}
+
+.row2 h6{
+  position: absolute;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  text-align: center;
+  left: 920px;
+  top: 1250px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav {
+  margin-left: 50px;
+}

@@ -1,0 +1,91 @@
+body {
+    font-family: "Roboto";
+}
+
+.main {
+    padding: 20px;
+    text-align: center;
+    margin: none;
+    height: 100vh;
+    width: 100vw;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+i {
+    color: white;
+    font-size: 24px;
+}
+
+button, button:hover {
+    outline: none;
+    border: none;
+    background-color: coral;
+}
+
+input, input:focus {
+    width: 60vw;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 18px;
+    margin-right: none;
+    padding: 10px;
+}
+
+button#addButton {
+    margin-left: 10px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input:focus {
+    border-bottom: solid 2px coral;
+}
+
+#foodstoringtable {
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav {
+    margin-left: 50px;
+}
+
+nav div ul li a, nav div ul li a:hover, nav div ul li a:visited {
+    text-decoration: underline;
+    color: black;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 100;
+}
+
+td {
+    text-align: left;
+}
+
+button {
+    color: white;
+}
+
+td button {
+    padding: 5px;
+}
