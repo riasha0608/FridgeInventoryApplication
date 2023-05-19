@@ -8,82 +8,93 @@
     <link href="calendar.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html" class="btn red">Home</a></li>
+          <li><a href="search.html">Fridge</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+        <!-- <input type="button" value="Login" align="right"> -->
+      </div>
+    </nav>  
     <div id="myNav" class="overlay">
-  
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    
-      <div class="overlay-content">
+      <div class="overlay-content">  
         <a href="index.html">Home</a>
         <a href="search.html">Search</a>
-      </div>
+      </div> 
     </div>
+    <div class="month">
+      <ul>
+        <li class="prev">&#10094;</li>
+        <li class="next">&#10095;</li>
+        <li>february<br><span style="font-size:18px">2023</span></li>
+        <span onclick="openNav()">Menu</span>
+      </ul>
+    </div>
+    
+    <ul class="weekdays">
+      <li>Su</li>
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+      <li>Sa</li>
+    </ul>
+    
+    <ul class="days">
+      <li> </li>
+      <li> </li>
+      <li> </li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </li>
+      <li>6</li>
+      <li>
+      <div class="popup" onclick="myFunction()" ><span class="active">7</span>
+      <span class="popuptext" id="myPopup">Avocados go bad :(</span>
+    </div>
+      </li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>
+        
+    <div class="popup" onclick="myFunction2()" ><span class="active">23</span>
+      <span class="popuptext" id="myPopup2">Milk goes bad :(</span>
+    </div>
+    </li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+    
+      <v></v>
+    </ul>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 
-<div class="month">
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>february<br><span style="font-size:18px">2023</span></li>
-    <span onclick="openNav()">Menu</span>
-  </ul>
-</div>
 
-<ul class="weekdays">
-  <li>Su</li>
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-</ul>
-
-<ul class="days">
-  <li> </li>
-  <li> </li>
-  <li> </li>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-</li>
-  <li>6</li>
-  <li>
-  <div class="popup" onclick="myFunction()" ><span class="active">7</span>
-  <span class="popuptext" id="myPopup">Avocados go bad :(</span>
-</div>
-  </li>
-  <li>8</li>
-  <li>9</li>
-  <li>10</li>
-  <li>11</li>
-  <li>12</li>
-  
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>
-    
-<div class="popup" onclick="myFunction2()" ><span class="active">23</span>
-  <span class="popuptext" id="myPopup2">Milk goes bad :(</span>
-</div>
-</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-
-  <v></v>
-</ul>
 
 <script src="calendar.js"></script>
 </html>
