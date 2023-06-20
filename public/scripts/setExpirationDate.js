@@ -1,0 +1,1 @@
+document.getElementById("expiration_date").valueAsDate = new Date();

@@ -1,0 +1,17 @@
+h1, h2 {
+    border-radius: 25px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.btn-large {
+    border-radius: 8px;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+html {
+    /* background-color: beige; */
+    background-image: url("/images/home_page_background.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}

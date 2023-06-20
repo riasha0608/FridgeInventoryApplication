@@ -1,0 +1,35 @@
+<!-- Nav bar -->
+<header>
+    <nav>
+        <div class="nav-wrapper orange darken-3">
+            <a href="/" class="brand-logo">Fridge Manager</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <!-- Main nav, hidden for small screens -->
+            <ul id="desktop-nav" class="right hide-on-med-and-down">
+                <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                <li><a href="/fridge"><i class="material-icons left">event_note</i>Fridge Inventory</a></li>
+                <li><a href="/categories"><i class="material-icons left">dataset</i> Food Categories</a></li> 
+                <li><a href="/meals"><i class="material-icons left">dataset</i> Meals</a></li>
+                <% if (isLoggedIn) { %>
+                    <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+                    <li><a href="/logout" class="btn red accent-4">Logout</a></li>                        
+                <% } else { %>
+                    <li><a href="/login" class="btn blue darken-4">Login</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+    <!-- Mobile nav menu, shown when menu button clicked -->
+    <ul id="mobile-nav" class="sidenav">
+        <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+        <li><a href="/fridge"><i class="material-icons left">event_note</i>Fridge Inventory</a></li>
+        <li><a href="/categories"><i class="material-icons left">dataset</i> Food Categories</a></li>
+        <li><a href="/meals"><i class="material-icons left">dataset</i> Meals</a></li>
+        <% if (isLoggedIn) { %>
+            <li><a href="/profile"><i class="material-icons left">person</i> Hello, <%=user.name%></a> </li>
+            <li><a href="/logout" class="btn red">Logout</a></li>                        
+        <% } else { %>
+            <li><a href="/login" class="btn blue">Login</a></li>
+        <% } %>
+    </ul>
+</header>

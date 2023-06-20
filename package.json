@@ -1,0 +1,36 @@
+{
+  "name": "fridgeinventoryapplication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devstart": "nodemon -e js,ejs,sql,env app.js",
+    "dbcreate": "node db/db_create.js",
+    "dbsample": "node db/db_insert_sample_data.js",
+    "dbprint": "node db/db_print.js",
+    "devstart-fresh": "npm-run-all dbcreate dbsample dbprint devstart"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riasha0608/FridgeInventoryApplication.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riasha0608/FridgeInventoryApplication/issues"
+  },
+  "homepage": "https://github.com/riasha0608/FridgeInventoryApplication#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-openid-connect": "^2.16.0",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
