@@ -37,7 +37,7 @@
                 <i class="material-icons left">arrow_back</i>Return to Home Page
             </a>
             <h1>Search based on category:</h1>
-            <form id = "searchForm" method="post" action="/searchResults">
+            <form id = "searchForm" method="post" action="/categorySearchResults">
                 <select id="categoryInput" name="category_id" required>
                     <option value="" disabled selected>Choose your food category</option>
                     <% for (let i = 0; i < foodCategoriesList.length; i++) { %>

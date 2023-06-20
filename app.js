@@ -268,14 +268,14 @@ app.get('/categories', requiresAuth(), (req, res) => {
     });
 });
 
-app.get('/search', requiresAuth(), (req, res) => {
+app.get('/categorySearch', requiresAuth(), (req, res) => {
     db.execute(read_food_categories_all_alphabetical_sql, [req.oidc.user.email], (error, results) => {
         if (DEBUG)
             console.log(error ? error : results);
         if (error)
             res.status(500).send(error);
         else {
-            res.render("search", {foodCategoriesList: results});
+            res.render("categorySearch", {foodCategoriesList: results});
         }
     });
 });
@@ -294,7 +294,7 @@ const create_based_on_search_sql = `
         AND fridge.userId = ?
 `
 
-app.post('/searchResults', requiresAuth(), (req, res) => {
+app.post('/categorySearchResults', requiresAuth(), (req, res) => {
     db.execute(create_based_on_search_sql, [req.body.category_id, req.oidc.user.email], (error, results) => {
         if (DEBUG)
             console.log(error ? error: results);
@@ -302,10 +302,56 @@ app.post('/searchResults', requiresAuth(), (req, res) => {
             res.status(500).send(error);
         else {
             let data = {fridgelist: results};
-            res.render('searchResults', data);
+            res.render('categorySearchResults', data);
         }
     });
 });
+
+// const read_date_being_searched_sql = `
+//     SELECT 
+//         expiration_date
+//     FROM 
+//         fridge
+//     WHERE
+//         userId = ?
+// `
+
+// app.get('/dateSearch', requiresAuth(), (req, res) => {
+//     db.execute(read_date_being_searched_sql, [req.oidc.user.email], (error, results) => {
+//         if (DEBUG)
+//             console.log(error ? error : results);
+//         if (error)
+//             res.status(500).send(error);
+//         else {
+//             res.redirect("/dateSearch");
+//         }
+//     });
+// });
+
+// const date_based_search_sql = `
+//     SELECT
+//         food_item_name, 
+//         DATE_FORMAT(expiration_date, "%m/%d/%Y (%W)") as expiration_date_formatted,
+//         quantity_and_unit
+//     FROM
+//         fridge
+//     WHERE
+//         expiration_date <= ?
+//         AND fridge.userId = ?
+// `
+
+// app.post('/dateSearchResults', requiresAuth(), (req, res) => {
+//     db.execute(date_based_search_sql, [req.body.expiration_date, req.oidc.user.email], (error, results) => {
+//         if (DEBUG)
+//             console.log(error ? error: results);
+//         if (error)
+//             res.status(500).send(error);
+//         else {
+//             let data = {fridgelist: results};
+//             res.render('dateSearchResults', data);
+//         }
+//     });
+// });
 
 const create_food_category_sql = `
     INSERT INTO food_categories
