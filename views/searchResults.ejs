@@ -30,26 +30,31 @@
     
     <!-- Actual page content! -->
     <div class="container">
-        
 
-        <div class="section" id="searchingStuff">
-            <a class="btn-small waves-effect waves-light blue darken-4 white-text" href="/">
-                <i class="material-icons left">arrow_back</i>Return to Home Page
-            </a>
-            <h1>Search based on category:</h1>
-            <form id = "searchForm" method="post" action="/searchResults">
-                <select id="categoryInput" name="category_id" required>
-                    <option value="" disabled selected>Choose your food category</option>
-                    <% for (let i = 0; i < foodCategoriesList.length; i++) { %>
-                        <option value=<%=foodCategoriesList[i].food_category_id %>><%= foodCategoriesList[i].food_category_name %></option>
-                    <% } %>
-                </select>
-                <label for="categoryInput">Food category:</label>
-                <button class="btn waves-effect waves-light blue darken-4" type="submit">
-                    <i class="material-icons right">send</i>
-                    Submit
-                </button>
-            </form>
+        <div class="container">
+            <div class="section" id="searchedItems">
+                
+                <h1>Based on your search:</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Expiration Date</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (let i = 0; i < fridgelist.length; i++) {%>
+                        <tr>
+                            <td><%= fridgelist[i].food_item_name %></td>
+                            <td><%= fridgelist[i].expiration_date_formatted %></td>
+                            <td><%= fridgelist[i].quantity_and_unit %></td>
+                        </tr>                
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
         </div>
         
     </div>

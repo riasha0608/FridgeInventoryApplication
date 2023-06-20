@@ -146,7 +146,7 @@ const read_fridge_detail_sql = `
 `
 
 // define a route for the assignment detail page
-app.get( "/fridge/:id", requiresAuth(), ( req, res, next ) => {
+app.get("/fridge/:id", requiresAuth(), ( req, res, next ) => {
     db.execute(read_fridge_detail_sql, [req.params.id, req.oidc.user.email], (error, results) => {
         if (DEBUG)
             console.log(error ? error : results);
@@ -268,6 +268,45 @@ app.get('/categories', requiresAuth(), (req, res) => {
     });
 });
 
+app.get('/search', requiresAuth(), (req, res) => {
+    db.execute(read_food_categories_all_alphabetical_sql, [req.oidc.user.email], (error, results) => {
+        if (DEBUG)
+            console.log(error ? error : results);
+        if (error)
+            res.status(500).send(error);
+        else {
+            res.render("search", {foodCategoriesList: results});
+        }
+    });
+});
+
+const create_based_on_search_sql = `
+    SELECT
+        food_item_name, 
+        DATE_FORMAT(expiration_date, "%m/%d/%Y (%W)") as expiration_date_formatted,
+        quantity_and_unit
+    FROM
+        fridge
+    JOIN food_categories
+        ON fridge.category_id = food_categories.food_category_id
+    WHERE
+        category_id = ?
+        AND fridge.userId = ?
+`
+
+app.post('/searchResults', requiresAuth(), (req, res) => {
+    db.execute(create_based_on_search_sql, [req.body.category_id, req.oidc.user.email], (error, results) => {
+        if (DEBUG)
+            console.log(error ? error: results);
+        if (error)
+            res.status(500).send(error);
+        else {
+            let data = {fridgelist: results};
+            res.render('searchResults', data);
+        }
+    });
+});
+
 const create_food_category_sql = `
     INSERT INTO food_categories
         (food_category_name, userid)
@@ -312,6 +351,8 @@ app.get("/categories/:id/delete", requiresAuth(), (req, res) => {
         }
     })
 })
+
+
 
 const read_meals_all_alphabetical_sql = `
     SELECT
