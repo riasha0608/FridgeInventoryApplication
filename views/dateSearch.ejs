@@ -38,8 +38,15 @@
             </a>
             <h1>Search based on category:</h1>
             <form id = "dateSearchForm" method="post" action="/dateSearchResults">
-                <label for="expiration_date">Expiration Date:</label>
-                <input type="date" name="expiration_date" id="expiration_date" required>
+                <select id="expiration_date" name="expiration_date" required>
+                    <option value="" disabled selected>Choose one of your expiration dates</option>
+                    <% for (let i = 0; i < fridge.length; i++) { %>
+                        <option value=<%=fridge[i].expiration_date %>><%= fridge[i].expiration_date_formatted %></option>
+                    <% } %>
+                </select>
+                <label for="categoryInput">Expiration Date:</label>
+                <!-- <label for="expiration_date">Expiration Date:</label>
+                <input type="date" name="expiration_date" id="expiration_date" required> -->
                 <button class="btn waves-effect waves-light blue darken-4" type="submit">
                     <i class="material-icons right">send</i>
                     Submit

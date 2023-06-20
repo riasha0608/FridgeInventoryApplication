@@ -317,13 +317,13 @@ app.post('/categorySearchResults', requiresAuth(), (req, res) => {
 // `
 
 // app.get('/dateSearch', requiresAuth(), (req, res) => {
-//     db.execute(read_date_being_searched_sql, [req.oidc.user.email], (error, results) => {
+//     db.execute(read_fridge_all_sql, [req.oidc.user.email], (error, results) => {
 //         if (DEBUG)
 //             console.log(error ? error : results);
 //         if (error)
 //             res.status(500).send(error);
 //         else {
-//             res.redirect("/dateSearch");
+//             res.render("dateSearch", {fridge: results});
 //         }
 //     });
 // });
@@ -347,8 +347,7 @@ app.post('/categorySearchResults', requiresAuth(), (req, res) => {
 //         if (error)
 //             res.status(500).send(error);
 //         else {
-//             let data = {fridgelist: results};
-//             res.render('dateSearchResults', data);
+//             res.render('dateSearchResults', {fridgelist: results});
 //         }
 //     });
 // });
