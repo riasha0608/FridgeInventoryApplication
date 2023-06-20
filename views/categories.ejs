@@ -36,8 +36,27 @@
             <a class="btn-small waves-effect waves-light blue darken-4 white-text" href="/">
                 <i class="material-icons left">arrow_back</i>Return to Home Page
             </a>
+
+            
+
+            <div class="section" id="add">
+                <h2>Add a food category:</h2>
+                <form id="addForm" method="post" action="/categories"> <!-- default action is the page's URL --> 
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="categoriesNameInput" name="food_category_name" class="validate" data-length="32" required>
+                            <label for="categoriesNameInput">Food Category name:</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light blue darken-4" type="submit">
+                        <i class="material-icons right">send</i>
+                        Submit
+                    </button>
+                </form>
+            </div>
+
             <h1>Food Categories:</h1>
-            <table>
+            <table class="listCategories">
                 <thead>
                     <tr>
                         <th>Your food categories:</th>
@@ -59,21 +78,7 @@
             </table>
         </div>
 
-        <div class="section" id="add">
-            <h2>Add a food category:</h2>
-            <form id="addForm" method="post" action="/categories"> <!-- default action is the page's URL --> 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" id="categoriesNameInput" name="food_category_name" class="validate" data-length="32" required>
-                        <label for="categoriesNameInput">Food Category name:</label>
-                    </div>
-                </div>
-                <button class="btn waves-effect waves-light blue darken-4" type="submit">
-                    <i class="material-icons right">send</i>
-                    Submit
-                </button>
-            </form>
-        </div>
+        
     </div>
 
     <!-- Materialize JavaScript -->
